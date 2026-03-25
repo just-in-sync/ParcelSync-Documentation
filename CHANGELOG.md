@@ -2,14 +2,26 @@
 
 All changes of ParcelSync will be be documented in this document.
 
+## v11.5.0-alpha - March 25, 2026
+
+### Changes in v1.5.0-alpha
+
+- Added proper view format for statuses in Delivery Logs and Incoming Authorized Persons
+- Minor adjustments in forms of switching Guard Account and User Interface
+- Modified proper arrangement of columns in Detailed View and Form Views of Delivery Logs, and Security Guards
+
+### Fixes in v1.5.0-alpha
+
+- Removed the Designated Building showing in the View of Managers causing warning of exposed ID.
+
 ## v1.4.0-alpha - March 23, 2026
 
-### Changes in v1.4.0
+### Changes in v1.4.0-alpha
 
 - Security Guards sheet restructured into account directory.
 - Personal details separated from login data
 
-### Added in v1.4.0
+### Added in v1.4.0-alpha
 
 - Security Guard Details sheet stores personal info referenced by guardAccountID
 
@@ -21,7 +33,7 @@ All changes of ParcelSync will be be documented in this document.
 
 - Security Guard Account form view for registering building email accounts
 
-### Fixes in v1.4.0
+### Fixes in v1.4.0-alpha
 
 - Guard identity now properly separated allowing multi-guard but single account
 

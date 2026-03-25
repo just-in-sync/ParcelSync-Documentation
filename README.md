@@ -2,9 +2,9 @@
 
 ## ParcelSync: Delivery Management System
 
-**Version:** v1.4.0-alpha
-**AppSheet Build:** 1.000244
-**Date:** March 23, 2026
+**Version:** v1.5.0-alpha
+**AppSheet Build:** 1.000253
+**Date:** March 25, 2026
 **Maintainer:** Justin Anthony A. Aleta
 
 ## 1. Executive Summary
