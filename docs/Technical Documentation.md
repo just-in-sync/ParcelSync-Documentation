@@ -42,3 +42,4 @@
 ### Slices
 
 1. **Arrived Deliveries to Claim**: This is filtered `Delivery logs` for packages with the `status` of "_Unclaimed_".
+2. **Not yet approved**: This is filtered `Incoming Authorized Person` for packages with the `isApproved` of "_Unclaimed_".
