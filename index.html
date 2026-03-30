@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ParcelSync | Project Documentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --brand-orange: #f97316; /* Tailwind Orange 500 */
+        --brand-dark: #111827; /* Tailwind Gray 900 */
+        --brand-accent: #fb923c; /* Tailwind Orange 400 */
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        scroll-behavior: smooth;
+      }
+      .bg-brand-orange {
+        background-color: var(--brand-orange);
+      }
+      .text-brand-orange {
+        color: var(--brand-orange);
+      }
+      .border-brand-orange {
+        border-color: var(--brand-orange);
+      }
+      .bg-brand-dark {
+        background-color: var(--brand-dark);
+      }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--brand-orange);
+        border-radius: 10px;
+      }
+
+      .nav-link:hover {
+        color: var(--brand-orange);
+        transition: 0.3s;
+      }
+      .doc-card {
+        border-left: 4px solid var(--brand-orange);
+      }
+
+      .btn-primary {
+        background-color: var(--brand-orange);
+        color: white;
+        transition: all 0.2s;
+      }
+      .btn-primary:hover {
+        background-color: var(--brand-accent);
+        transform: translateY(-1px);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav
+      class="bg-brand-dark text-white sticky top-0 z-50 shadow-xl border-b-2 border-brand-orange"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center"
+      >
+        <div class="flex items-center space-x-4">
+          <img
+            src="Images/ParcelSync_Logo.png"
+            alt="ParcelSync Logo"
+            class="h-10 w-auto rounded bg-white p-1"
+          />
+          <div class="flex flex-col">
+            <span class="font-bold tracking-tight text-lg leading-none"
+              >ParcelSync</span
+            >
+            <span
+              class="text-[10px] uppercase tracking-widest text-brand-orange font-bold"
+              >Documentation Portal</span
+            >
+          </div>
+        </div>
+        <div
+          class="hidden md:flex space-x-8 text-sm font-semibold uppercase tracking-wider"
+        >
+          <a href="#technical" class="nav-link">Technical</a>
+          <a href="#end-user" class="nav-link">End-User</a>
+          <a href="#workflow" class="nav-link">Workflows</a>
+          <a href="#limitations" class="nav-link">Limitations</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header
+      class="relative bg-white overflow-hidden py-16 border-b border-gray-200"
+    >
+      <div
+        class="absolute top-0 right-0 -mt-20 -mr-20 w-64 h-64 bg-orange-100 rounded-full blur-3xl opacity-50"
+      ></div>
+      <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+        <h1 class="text-5xl font-black text-brand-dark mb-4 leading-tight">
+          Parcel Delivery
+          <span class="text-brand-orange">Management Platform</span>
+        </h1>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto font-medium">
+          Official documentation for the TSI / Bedoo GMS logistics and security
+          ecosystem.
+        </p>
+        <div class="mt-10 flex flex-wrap justify-center gap-6 text-sm">
+          <div
+            class="flex items-center bg-gray-100 px-4 py-2 rounded-full border border-gray-200"
+          >
+            <strong class="text-brand-dark mr-2">Version:</strong> 1.6.0-alpha
+            (MVP)
+          </div>
+          <div
+            class="flex items-center bg-gray-100 px-4 py-2 rounded-full border border-gray-200"
+          >
+            <strong class="text-brand-dark mr-2">Build:</strong> 1.000259
+          </div>
+          <div
+            class="flex items-center bg-gray-100 px-4 py-2 rounded-full border border-gray-200"
+          >
+            <strong class="text-brand-dark mr-2">Author:</strong> Justin Anthony
+            A. Aleta
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-16">
+      <!-- 1. Technical Documentation -->
+      <section id="technical" class="mb-24">
+        <div class="flex items-center space-x-4 mb-10">
+          <div class="h-12 w-3 bg-brand-orange rounded-full"></div>
+          <h2 class="text-4xl font-extrabold text-brand-dark tracking-tight">
+            1. Technical Documentation
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 gap-10">
+          <!-- Architecture Card -->
+          <div
+            class="bg-white p-10 rounded-2xl shadow-sm border border-gray-100 doc-card"
+          >
+            <h3 class="text-2xl font-bold mb-6 text-brand-dark">
+              Architecture & Data Model
+            </h3>
+            <p class="text-gray-600 mb-8 leading-relaxed text-lg">
+              ParcelSync is engineered on the
+              <strong>Google AppSheet</strong> platform, utilizing
+              <strong>Google Sheets</strong> as a high-availability relational
+              database.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-8">
+              <div class="bg-orange-50 p-6 rounded-xl border border-orange-100">
+                <h4
+                  class="font-bold mb-4 uppercase text-xs tracking-widest text-brand-orange"
+                >
+                  Primary Data Tables
+                </h4>
+                <ul class="space-y-3 text-sm text-gray-700">
+                  <li class="flex items-center">
+                    <span
+                      class="w-2 h-2 bg-brand-orange rounded-full mr-2"
+                    ></span>
+                    <strong>Admins:</strong> Property Management oversight
+                  </li>
+                  <li class="flex items-center">
+                    <span
+                      class="w-2 h-2 bg-brand-orange rounded-full mr-2"
+                    ></span>
+                    <strong>Buildings:</strong> Master Property Registry
+                  </li>
+                  <li class="flex items-center">
+                    <span
+                      class="w-2 h-2 bg-brand-orange rounded-full mr-2"
+                    ></span>
+                    <strong>Tenants:</strong> Occupant profiles and contact info
+                  </li>
+                  <li class="flex items-center">
+                    <span
+                      class="w-2 h-2 bg-brand-orange rounded-full mr-2"
+                    ></span>
+                    <strong>Delivery Logs:</strong> Real-time transaction engine
+                  </li>
+                  <li class="flex items-center">
+                    <span
+                      class="w-2 h-2 bg-brand-orange rounded-full mr-2"
+                    ></span>
+                    <strong>Security Guards:</strong> Staff shift and deployment
+                  </li>
+                </ul>
+              </div>
+              <div class="bg-gray-900 p-6 rounded-xl text-white shadow-lg">
+                <h4
+                  class="font-bold mb-4 uppercase text-xs tracking-widest text-brand-orange"
+                >
+                  Automated Logic (Bots)
+                </h4>
+                <ul class="space-y-3 text-sm opacity-90">
+                  <li class="flex items-center">
+                    <svg
+                      class="w-4 h-4 mr-2 text-green-400"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      ></path>
+                    </svg>
+                    QR Code Instant Generation
+                  </li>
+                  <li class="flex items-center">
+                    <svg
+                      class="w-4 h-4 mr-2 text-green-400"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      ></path>
+                    </svg>
+                    Push Notification on Arrival
+                  </li>
+                  <li class="flex items-center">
+                    <svg
+                      class="w-4 h-4 mr-2 text-green-400"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      ></path>
+                    </svg>
+                    Weekly PDF Management Report
+                  </li>
+                  <li class="flex items-center">
+                    <svg
+                      class="w-4 h-4 mr-2 text-green-400"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      ></path>
+                    </svg>
+                    30-Day Automated Data Archiving
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Technical Diagram -->
+          <div
+            class="bg-white p-4 rounded-2xl shadow-lg border border-gray-200"
+          >
+            <div
+              class="bg-gray-50 rounded-xl py-4 flex flex-col items-center justify-center"
+            >
+              <img
+                src="Images/image-12.png"
+                alt="System Architecture Diagram"
+                class="max-w-full h-auto rounded-lg shadow-sm border border-gray-200"
+              />
+              <p
+                class="mt-4 text-xs font-bold text-gray-400 uppercase tracking-widest"
+              >
+                Image 1: Admin Console
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. End-User Documentation -->
+      <section id="end-user" class="mb-24">
+        <div class="flex items-center space-x-4 mb-10">
+          <div class="h-12 w-3 bg-brand-orange rounded-full"></div>
+          <h2 class="text-4xl font-extrabold text-brand-dark tracking-tight">
+            2. End-User Documentation
+          </h2>
+        </div>
+
+        <div id="workflow" class="space-y-12">
+          <!-- Receiving Workflow -->
+          <div
+            class="group bg-white p-10 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+          >
+            <h3
+              class="text-2xl font-bold mb-8 text-brand-dark flex items-center"
+            >
+              <span
+                class="bg-brand-orange text-white w-10 h-10 rounded-xl flex items-center justify-center font-black mr-4 shadow-lg group-hover:rotate-6 transition-transform"
+                >A</span
+              >
+              Receiving a Parcel (Guard Workflow)
+            </h3>
+            <div class="grid md:grid-cols-2 gap-10">
+              <div class="space-y-6">
+                <div class="flex items-start space-x-4">
+                  <span
+                    class="bg-orange-100 text-brand-orange px-3 py-1 rounded-md font-bold text-xs"
+                    >01</span
+                  >
+                  <p class="text-gray-700 leading-relaxed font-medium">
+                    Verify if the parcel is <strong>pre-paid</strong> and
+                    non-perishable (No food items).
+                  </p>
+                </div>
+                <div class="flex items-start space-x-4">
+                  <span
+                    class="bg-orange-100 text-brand-orange px-3 py-1 rounded-md font-bold text-xs"
+                    >02</span
+                  >
+                  <p class="text-gray-700 leading-relaxed">
+                    Open the <strong>Add Log</strong> form and input Courier,
+                    Tenant, and Size details.
+                  </p>
+                </div>
+                <div class="flex items-start space-x-4">
+                  <span
+                    class="bg-orange-100 text-brand-orange px-3 py-1 rounded-md font-bold text-xs"
+                    >03</span
+                  >
+                  <p class="text-gray-700 leading-relaxed">
+                    Capture a clear <strong>Photo</strong> of the parcel label
+                    for record accuracy.
+                  </p>
+                </div>
+                <div class="flex items-start space-x-4">
+                  <span
+                    class="bg-orange-100 text-brand-orange px-3 py-1 rounded-md font-bold text-xs"
+                    >04</span
+                  >
+                  <p class="text-gray-700 leading-relaxed">
+                    Assign the <strong>Shelf Location</strong> and click
+                    <strong>Save</strong> to trigger notifications.
+                  </p>
+                </div>
+              </div>
+              <div class="bg-gray-50 rounded-xl p-2 border border-gray-200">
+                <img
+                  src="Images/image-6.png"
+                  alt="Log View"
+                  class="rounded-lg shadow-sm w-full h-auto"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Claiming Workflow -->
+          <div
+            class="group bg-white p-10 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+          >
+            <h3
+              class="text-2xl font-bold mb-8 text-brand-dark flex items-center"
+            >
+              <span
+                class="bg-brand-dark text-white w-10 h-10 rounded-xl flex items-center justify-center font-black mr-4 shadow-lg group-hover:rotate-6 transition-transform"
+                >B</span
+              >
+              The Claim Process (Resident & Guard)
+            </h3>
+            <div class="grid md:grid-cols-2 gap-10">
+              <div
+                class="bg-gray-50 rounded-xl p-2 border border-gray-200 order-last md:order-first"
+              >
+                <img
+                  src="Images/image-2.png"
+                  alt="Notification Screen"
+                  class="rounded-lg shadow-sm w-full h-auto"
+                />
+              </div>
+              <div class="space-y-6">
+                <div class="flex items-start space-x-4">
+                  <span
+                    class="bg-gray-200 text-brand-dark px-3 py-1 rounded-md font-bold text-xs"
+                    >01</span
+                  >
+                  <p class="text-gray-700 leading-relaxed font-medium">
+                    Resident presents their digital <strong>QR Pass</strong> and
+                    a valid government ID.
+                  </p>
+                </div>
+                <div class="flex items-start space-x-4">
+                  <span
+                    class="bg-gray-200 text-brand-dark px-3 py-1 rounded-md font-bold text-xs"
+                    >02</span
+                  >
+                  <p class="text-gray-700 leading-relaxed">
+                    Guard uses the <strong>Scanner Mode</strong> to instantly
+                    retrieve the matching log.
+                  </p>
+                </div>
+                <div class="flex items-start space-x-4">
+                  <span
+                    class="bg-gray-200 text-brand-dark px-3 py-1 rounded-md font-bold text-xs"
+                    >03</span
+                  >
+                  <p class="text-gray-700 leading-relaxed">
+                    Verify the <strong>Claimer Identity</strong> (Tenant or
+                    Pre-registered Helper).
+                  </p>
+                </div>
+                <div class="flex items-start space-x-4">
+                  <span
+                    class="bg-gray-200 text-brand-dark px-3 py-1 rounded-md font-bold text-xs"
+                    >04</span
+                  >
+                  <p class="text-gray-700 leading-relaxed">
+                    Finalize release. Owner receives a
+                    <strong>Claim Confirmation</strong> alert instantly.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Limitations -->
+      <section id="limitations" class="mb-20">
+        <div
+          class="bg-brand-dark text-white p-12 rounded-[2rem] shadow-2xl relative overflow-hidden"
+        >
+          <div
+            class="absolute bottom-0 right-0 w-32 h-32 bg-brand-orange opacity-20 rounded-full -mb-16 -mr-16"
+          ></div>
+          <h2 class="text-3xl font-bold mb-8 flex items-center">
+            <svg
+              class="w-8 h-8 mr-4 text-brand-orange"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+              ></path>
+            </svg>
+            MVP Phase System Limitations
+          </h2>
+          <div class="grid md:grid-cols-2 gap-8 text-sm opacity-90">
+            <div class="space-y-4">
+              <div class="flex items-start space-x-3">
+                <span class="text-brand-orange text-lg">✓</span>
+                <p>
+                  <strong>Payment Processing:</strong> Excluded. Subscription
+                  billing is handled via manual B2B invoice.
+                </p>
+              </div>
+              <div class="flex items-start space-x-3">
+                <span class="text-brand-orange text-lg">✓</span>
+                <p>
+                  <strong>Hardware:</strong> No integration with physical smart
+                  lockers or turnstiles in MVP.
+                </p>
+              </div>
+            </div>
+            <div class="space-y-4">
+              <div class="flex items-start space-x-3">
+                <span class="text-brand-orange text-lg">✓</span>
+                <p>
+                  <strong>AI Features:</strong> ID verification and OCR for
+                  labels are manual by security staff.
+                </p>
+              </div>
+              <div class="flex items-start space-x-3">
+                <span class="text-brand-orange text-lg">✓</span>
+                <p>
+                  <strong>Reminders:</strong> Schedule is fixed at Day 3 all
+                  properties.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-gray-100 py-16 border-t border-gray-200">
+      <div class="max-w-5xl mx-auto px-6 text-center">
+        <div class="flex justify-center mb-6">
+          <img
+            src="Images/ParcelSync_Logo.png"
+            alt="TSI Logo"
+            class="h-8 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all"
+          />
+        </div>
+        <p class="text-gray-500 text-sm font-medium">
+          © 2026 Telectronic Systems Incorporated. All rights reserved.
+        </p>
+        <div
+          class="mt-4 flex justify-center space-x-2 text-[10px] tracking-widest font-black text-brand-dark uppercase"
+        >
+          <span>TSI</span>
+          <span class="text-brand-orange">|</span>
+          <span>ParcelSync</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
