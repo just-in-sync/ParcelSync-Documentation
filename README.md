@@ -7,6 +7,12 @@
 **Date:** March 30, 2026
 **Maintainer:** Justin Anthony A. Aleta
 
+---
+
+[Go to End User Documentation ➡️:](/docs/End-User%20Documentation.md)
+
+---
+
 ## 1. Executive Summary
 
 The ParcelSync is a mobile-first logistics and security tool designed to streamline package handling and visitor registration. It replaces manual logbooks with digital tracking, ensuring real-time data accuracy and automated tenant notifications.
