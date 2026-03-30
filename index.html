@@ -11,9 +11,9 @@
     />
     <style>
       :root {
-        --brand-orange: #f97316; /* Tailwind Orange 500 */
-        --brand-dark: #111827; /* Tailwind Gray 900 */
-        --brand-accent: #fb923c; /* Tailwind Orange 400 */
+        --brand-orange: #f97316;
+        --brand-dark: #111827;
+        --brand-accent: #fb923c;
       }
       body {
         font-family: "Inter", sans-serif;
@@ -32,7 +32,6 @@
         background-color: var(--brand-dark);
       }
 
-      /* Custom scrollbar */
       ::-webkit-scrollbar {
         width: 8px;
       }
@@ -50,16 +49,6 @@
       }
       .doc-card {
         border-left: 4px solid var(--brand-orange);
-      }
-
-      .btn-primary {
-        background-color: var(--brand-orange);
-        color: white;
-        transition: all 0.2s;
-      }
-      .btn-primary:hover {
-        background-color: var(--brand-accent);
-        transform: translateY(-1px);
       }
     </style>
   </head>
@@ -111,8 +100,7 @@
           <span class="text-brand-orange">Management Platform</span>
         </h1>
         <p class="text-xl text-gray-600 max-w-2xl mx-auto font-medium">
-          Official documentation for the TSI / Bedoo GMS logistics and security
-          ecosystem.
+          Official documentation for the TSI / Bedoo.
         </p>
         <div class="mt-10 flex flex-wrap justify-center gap-6 text-sm">
           <div
@@ -129,8 +117,8 @@
           <div
             class="flex items-center bg-gray-100 px-4 py-2 rounded-full border border-gray-200"
           >
-            <strong class="text-brand-dark mr-2">Author:</strong> Justin Anthony
-            A. Aleta
+            <strong class="text-brand-dark mr-2">Maintainer:</strong> Justin
+            Anthony A. Aleta
           </div>
         </div>
       </div>
@@ -147,136 +135,145 @@
         </div>
 
         <div class="grid grid-cols-1 gap-10">
-          <!-- Architecture Card -->
           <div
             class="bg-white p-10 rounded-2xl shadow-sm border border-gray-100 doc-card"
           >
             <h3 class="text-2xl font-bold mb-6 text-brand-dark">
-              Architecture & Data Model
+              System Overview
             </h3>
             <p class="text-gray-600 mb-8 leading-relaxed text-lg">
-              ParcelSync is engineered on the
-              <strong>Google AppSheet</strong> platform, utilizing
-              <strong>Google Sheets</strong> as a high-availability relational
-              database.
+              Built on <strong>Google AppSheet</strong> with a
+              <strong>Google Sheets</strong> back-end. This design prioritizes
+              rapid deployment and low-cost maintenance for the Philippine
+              property market.
             </p>
 
             <div class="grid md:grid-cols-2 gap-8">
               <div class="bg-orange-50 p-6 rounded-xl border border-orange-100">
                 <h4
-                  class="font-bold mb-4 uppercase text-xs tracking-widest text-brand-orange"
+                  class="font-bold mb-4 uppercase text-xs tracking-widest text-brand-orange text-center"
                 >
-                  Primary Data Tables
+                  Core Data Model
                 </h4>
+                <div class="text-xs text-gray-500 mb-4 text-center italic">
+                  Primary Tables & Relationships
+                </div>
                 <ul class="space-y-3 text-sm text-gray-700">
-                  <li class="flex items-center">
-                    <span
-                      class="w-2 h-2 bg-brand-orange rounded-full mr-2"
-                    ></span>
-                    <strong>Admins:</strong> Property Management oversight
+                  <li
+                    class="flex items-center justify-between border-b border-orange-100 pb-2"
+                  >
+                    <span>Buildings</span>
+                    <span class="text-[10px] font-bold text-orange-400"
+                      >MASTER</span
+                    >
                   </li>
-                  <li class="flex items-center">
-                    <span
-                      class="w-2 h-2 bg-brand-orange rounded-full mr-2"
-                    ></span>
-                    <strong>Buildings:</strong> Master Property Registry
+                  <li
+                    class="flex items-center justify-between border-b border-orange-100 pb-2"
+                  >
+                    <span>Tenants</span>
+                    <span class="text-[10px] font-bold text-orange-400"
+                      >REF: BUILDINGS</span
+                    >
                   </li>
-                  <li class="flex items-center">
-                    <span
-                      class="w-2 h-2 bg-brand-orange rounded-full mr-2"
-                    ></span>
-                    <strong>Tenants:</strong> Occupant profiles and contact info
+                  <li
+                    class="flex items-center justify-between border-b border-orange-100 pb-2"
+                  >
+                    <span>Delivery Logs</span>
+                    <span class="text-[10px] font-bold text-orange-400"
+                      >REF: TENANTS</span
+                    >
                   </li>
-                  <li class="flex items-center">
-                    <span
-                      class="w-2 h-2 bg-brand-orange rounded-full mr-2"
-                    ></span>
-                    <strong>Delivery Logs:</strong> Real-time transaction engine
-                  </li>
-                  <li class="flex items-center">
-                    <span
-                      class="w-2 h-2 bg-brand-orange rounded-full mr-2"
-                    ></span>
-                    <strong>Security Guards:</strong> Staff shift and deployment
+                  <li
+                    class="flex items-center justify-between border-b border-orange-100 pb-2"
+                  >
+                    <span>Security Guards</span>
+                    <span class="text-[10px] font-bold text-orange-400"
+                      >REF: BUILDINGS</span
+                    >
                   </li>
                 </ul>
               </div>
-              <div class="bg-gray-900 p-6 rounded-xl text-white shadow-lg">
+              <div
+                class="bg-brand-dark p-6 rounded-xl text-white shadow-lg relative overflow-hidden"
+              >
+                <div
+                  class="absolute top-0 right-0 w-24 h-24 bg-brand-orange opacity-10 rounded-full -mt-10 -mr-10"
+                ></div>
                 <h4
                   class="font-bold mb-4 uppercase text-xs tracking-widest text-brand-orange"
                 >
-                  Automated Logic (Bots)
+                  Developer Quick Links
                 </h4>
-                <ul class="space-y-3 text-sm opacity-90">
-                  <li class="flex items-center">
-                    <svg
-                      class="w-4 h-4 mr-2 text-green-400"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
+                <div class="space-y-4">
+                  <p class="text-xs opacity-70">
+                    For detailed function logic, AppScripts, and version
+                    history, refer to the source:
+                  </p>
+                  <div class="flex flex-col space-y-2">
+                    <a
+                      href="https://github.com/just-in-sync/ParcelSync-Documentation"
+                      class="bg-gray-800 hover:bg-gray-700 p-3 rounded-lg flex items-center justify-between transition-colors"
                     >
-                      <path
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      ></path>
-                    </svg>
-                    QR Code Instant Generation
-                  </li>
-                  <li class="flex items-center">
-                    <svg
-                      class="w-4 h-4 mr-2 text-green-400"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
+                      <span class="text-xs font-bold uppercase"
+                        >GitHub Repository</span
+                      >
+                      <svg
+                        class="w-4 h-4 text-brand-orange"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                        ></path>
+                      </svg>
+                    </a>
+                    <a
+                      href="https://www.appsheet.com/start/aba92a0d-ac77-4136-8d44-6bda4a5ba6d8"
+                      class="bg-gray-800 hover:bg-gray-700 p-3 rounded-lg flex items-center justify-between transition-colors"
                     >
-                      <path
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      ></path>
-                    </svg>
-                    Push Notification on Arrival
-                  </li>
-                  <li class="flex items-center">
-                    <svg
-                      class="w-4 h-4 mr-2 text-green-400"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      ></path>
-                    </svg>
-                    Weekly PDF Management Report
-                  </li>
-                  <li class="flex items-center">
-                    <svg
-                      class="w-4 h-4 mr-2 text-green-400"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      ></path>
-                    </svg>
-                    30-Day Automated Data Archiving
-                  </li>
-                </ul>
+                      <span class="text-xs font-bold uppercase"
+                        >AppSheet Editor</span
+                      >
+                      <svg
+                        class="w-4 h-4 text-brand-orange"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                        ></path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
           <!-- Technical Diagram -->
           <div
-            class="bg-white p-4 rounded-2xl shadow-lg border border-gray-200"
+            class="bg-white p-6 rounded-2xl shadow-lg border border-gray-200"
           >
             <div
-              class="bg-gray-50 rounded-xl py-4 flex flex-col items-center justify-center"
+              class="bg-gray-50 rounded-xl py-6 flex flex-col items-center justify-center"
             >
               <img
-                src="Images/image-12.png"
+                src="Images/image-13.png"
                 alt="System Architecture Diagram"
                 class="max-w-full h-auto rounded-lg shadow-sm border border-gray-200"
               />
               <p
                 class="mt-4 text-xs font-bold text-gray-400 uppercase tracking-widest"
               >
-                Image 1: Admin Console
+                Figure 1.1: Relational Schema Overview
               </p>
             </div>
           </div>
@@ -481,8 +478,8 @@
               <div class="flex items-start space-x-3">
                 <span class="text-brand-orange text-lg">✓</span>
                 <p>
-                  <strong>Reminders:</strong> Schedule is fixed at Day 3 all
-                  properties.
+                  <strong>Reminders:</strong> Schedule is fixed at Day 3 and Day
+                  7 for all properties.
                 </p>
               </div>
             </div>
@@ -508,7 +505,7 @@
         >
           <span>TSI</span>
           <span class="text-brand-orange">|</span>
-          <span>ParcelSync</span>
+          <span>ParcelSync GMS</span>
         </div>
       </div>
     </footer>
