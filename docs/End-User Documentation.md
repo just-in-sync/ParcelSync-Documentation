@@ -1,7 +1,7 @@
 # End-User Documentation
 
-**Version:** 1.000259 (MVP)
-**Date:** March 30, 2026
+**Version:** 1.000326 (MVP)
+**Date:** March 31, 2026
 **Maintainer:** Justin Anthony A. Aleta
 
 **Target**: Condo Admins and Security Guards.
@@ -39,6 +39,16 @@
 4. Once it is found, select the person who is claiming and press "Save"
 
 5. A notification will be sent to the owner and authorized persons letting them all know that the package is already claimed.
+
+### Switching Accounts
+
+1. Click `Change Account` on the bottom navigation.
+
+2. Click the Edit icon floating on the bottom part of the screen in color `orange`
+
+3. A form will open up, you have to provide the **4-digit PIN** number to verify identity. When there is a match, the name of the security guard will show at the bottom.
+
+4. Click `Save` afterwards for sucessfull account switch
 
 ## C. Resident Experience
 

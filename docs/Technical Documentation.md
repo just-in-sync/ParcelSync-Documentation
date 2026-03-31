@@ -1,7 +1,7 @@
 # Technical Documentation
 
-**Version:** 1.000259 (MVP)
-**Date:** March 30, 2026
+**Version:** 1.000326 (MVP)
+**Date:** March 31, 2026
 **Maintainer:** Justin Anthony A. Aleta
 
 **Target**: Future AppSheet developers or IT maintenance staff.
@@ -34,6 +34,8 @@
 4. Authorized Person Invite bot
 5. Weekly Report Notification
 6. Archiving Notification
+7. Transfer to Legitimate Authorized Person
+8. Remove Expiring Authorized Person
 
 ## C. Reference Views
 
@@ -43,4 +45,3 @@
 ### Slices
 
 1. **Arrived Deliveries to Claim**: This is filtered `Delivery logs` for packages with the `status` of "_Unclaimed_".
-2. **Not yet approved**: This is filtered `Incoming Authorized Person` for packages with the `isApproved` of "_Unclaimed_".

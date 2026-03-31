@@ -2,7 +2,33 @@
 
 All changes of ParcelSync will be be documented in this document.
 
-## Changes v1.6.0-alpha - March 30, 2026
+## v1.7.0-alpha - March 31, 2026
+
+### Changes in v1.7.0-alpha
+
+- The forms for registering Authorized Persons is now via Google AppScript WebApp
+
+- Changed the data type for `isApproved` column into Enum with values 'pending', 'approved', and 'not approved'
+
+### Added in v1.7.0-alpha
+
+- I added new automation bot called 'Remove Expiring Authorized Person'
+
+- Added PIN feature for secured shifting accounts of security guards.
+
+- New Column in Security Guard Details &rightarrow; `pin`
+
+- New Columns in Security Guards &rightarrow; `activePin`, `loginTimeStamp`, and `updatedLog`
+
+### Fixes in v1.7.0-alpha
+
+- Fixed the approval of Authorized Person, making sure buttons are visible by default
+
+- Every notification, the sender name is now `ParcelSync Admin`
+
+## v1.6.0-alpha - March 30, 2026
+
+### Changes v1.6.0-alpha
 
 - Delivery Logs Weekly Report: A report will be sent to the specific property manager about the delivery logs where he/she is designated building or property.
 
